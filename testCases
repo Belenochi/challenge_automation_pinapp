@@ -1,0 +1,218 @@
+SCENARIO Skip and validate tutorial
+GIVEN A user use for the first time dataDex App
+WHEN User start app and set their birth day
+THEN Select the type of account that will use (free, pro or with mail registration)
+AND Press on button start
+WHEN App go to home
+AND User can see a list with pokemons
+THEN Popup is displayed
+AND Press the button “NN”
+THEN Go to website
+AND Press back button 
+WHEN We are back to app
+THEN Start tutorial with filter step
+AND Validates that the displayed text is equal to
+AND Press filter ”” in screen
+WHEN Filter step of tutorial is closed
+THEN The tutorial shows the next step "favorites"
+AND Validates that the displayed text is equal to: “Tap to see a list of all the Pokemon you marked as favorites”
+AND Press favorite button
+WHEN Favorites step of tutorial is closed
+THEN The tutorial shows next step “Caught checklist”
+AND Validates that the displayed text is equal to: ”Tap to see a list of all the Pokemon you marked as caught. You can also see a completion percentage to know how close you are to catching them all!”
+AND Press “Caught checklist” button
+WHEN Caught checklist step of tutorial is closed
+THEN The tutorial shows next step “Search & filter”
+AND Validates that the displayed text is equal to: “Tap to easily search any Pokemon, filter the list and sort it by various parameters”
+AND Press “Search & filter” button
+WHEN Search & filter step of tutorial is closed
+THEN The app hides the tutorial and shows a list of pokemons, starting with the first generation
+AND The first three pokemon are: “Bulbasaur”, “Ivysaur” and “Venusaur”
+
+
+
+
+
+
+
+
+SCENARIO Select correct birthdate
+GIVEN A user use for the first time dataDex App and must set birthday
+WHEN App starts
+THEN Welcome screen is displayed
+AND Validates that the displayed text is equal to “Welcome to” and below of text are a image of “datadex”
+AND Below of “dataDex” image are a text equal to “dataDex is a beautifully designed Pokedex for everyone to use. Let’s get you started!”
+AND Below of texts are a next button
+WHEN Press the next button
+THEN Select birthday screen is displayed
+AND Validates the displayed text is equal to “please enter your date of birth”
+AND Below there is a button with the text “Why we need your date of birth”
+WHEN Press drop down list “Day”
+THEN List is open
+AND Validate that list don’t have more than 31 days
+WHEN Select day 31
+THEN List is closed
+WHEN Press drop down list “Month”
+THEN List is open
+AND Validate that list don’t have more than 12 moths
+WHEN Select month 2
+THEN List is closed
+WHEN Press drop down list “Year”
+THEN List is open
+AND We validate that you can leave up to 104 years before. If we are in 2023 we should be able to go only up to 1919
+WHEN Select year 1996
+THEN List is closed
+AND App show an error. The text must be equal to “The date you entered is invalid. Please try again”
+AND Button “next” are hidden
+THEN Tap on drop down list “Month”
+WHEN Select moth 1
+THEN List is closed
+AND Error text disappeared
+THEN A text equal to “Seems good!. By continuing, the date you entered will be set and could not be changed later.” is displayed.
+AND the "next" button appears
+WHEN Tap “next” button
+THEN Screen “you’re all set” is displayed
+
+
+
+
+
+
+
+
+
+SCENARIO Validate "GENERATION" filter
+GIVEN A user that want search pokemons by generation start to use dataDex app
+WHEN app starts
+AND is an old user
+THEN set birthday screen is not displayed
+AND tutorial is not displayed at home screen
+
+WHEN tap in "ALL GEN" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 1" filter
+THEN List are closed
+AND a list of pokemons is displayed
+AND the filter button now have the text "GEN 1"
+AND in home screen the first three pokemon are: “Bulbasaur”, “Ivysaur” and “Venusaur”
+AND first pokemon in list have the number #1
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #151
+AND the name of last one are "Mew"
+
+WHEN tap in "GEN 1" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 2" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 2"
+AND in home screen the first three pokemon are: “Chikorita”, “Bayleef” and “Meganium”
+AND first pokemon in list have the number #152
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #251
+AND the name of last one are "Celebi"
+
+WHEN tap in "GEN 2" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 3" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 3"
+AND in home screen the first three pokemon are: “Trecko”, “Grovyle” and “Sceptile”
+AND first pokemon in list have the number #252
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #386
+AND the name of last one are "Speed Deoxys"
+
+WHEN tap in "GEN 3" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 4" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 4"
+AND in home screen the first three pokemon are: “Turtwig”, “Grotle” and “Torterra”
+AND first pokemon in list have the number #387
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #493
+AND the name of last one are "Arceus"
+
+WHEN tap in "GEN 4" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 5" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 5"
+AND in home screen the first three pokemon are: “Victini”, “Snivy” and “Servine”
+AND first pokemon in list have the number #494
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #649
+AND the name of last one are "Genesect"
+
+WHEN tap in "GEN 5" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 6" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 6"
+AND in home screen the first three pokemon are: “Chespin”, “Quilladin” and “Chesnaught”
+AND first pokemon in list have the number #650
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #721
+AND the name of last one are "Volcanion"
+
+WHEN tap in "GEN 6" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 7" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 7"
+AND in home screen the first three pokemon are: “Alolan Rattata”, “Alolan Raticate” and “Alolan Raichu”
+AND first pokemon in list have the number #019
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #809
+AND the name of last one are "Gigantamax Melmetal"
+
+WHEN tap in "GEN 7" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 8" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 8"
+AND in home screen the first three pokemon are: “Gigantmax Venusaur”, “Gigantmax Charizard” and “Gigantmax Blastoise”
+AND first pokemon in list have the number #003
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #905
+AND the name of last one are "Therian Enamorus"
+
+WHEN tap in "GEN 8" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "GEN 9" filter
+THEN List are closed
+AND a list of diferents pokemons is displayed
+AND the filter button now have the text "GEN 9"
+AND in home screen the first three pokemon are: “Paldean Tauros”, “Blaze Breed Paldean Tauros” and “Aqua Breed Paldean Tauros”
+AND first pokemon in list have the number #128
+WHEN scroll to bottom of list
+THEN find the last pokemon in list with the number #1010
+AND the name of last one are "Annihilape"
+
+WHEN tap in "GEN 9" filter button
+THEN a list with 10 options filter is displayed
+AND "ALL GEN" filter is displayed in a different color than the rest 
+WHEN press on "ALL GEN" filter
+THEN List are closed
+AND a list of pokemons is displayed
+AND the filter button now have the text "ALL GEN"
+AND in home screen the first three pokemon are: “Bulbasaur”, “Ivysaur” and “Venusaur”
+WHEN scroll to bottom of list
+THEN are 1010 pokemons in list
+AND the name of last one are "Annihilape"
